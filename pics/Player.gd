@@ -16,4 +16,4 @@ func _physics_process(delta):
 		motion.x -=1
 	motion = motion.normalized()
 	motion = move_and_slide(motion * movespeed)
-	#look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())

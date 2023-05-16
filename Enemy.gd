@@ -1,21 +1,25 @@
 extends KinematicBody2D
 
-var motion = Vector2()
-
-func _ready():
-	pass #Replace with function body.
+var velocity = Vector2()
+export var speed = 150;
+var can_follow = false 
 
 func _physics_process(delta):
-	var player = get_parent().get_node("player")
-	
-	position += (player.position - position)/50
-	look_at(player.position)
-	
-	move_and_collide(motion)
-	motion = motion.normalized()
-	look_at(get_global_mouse_position())
+	if can_follow == true:
+		var player = get_parent().get_node("player")
+		velocity = position.direction_to(player.position)*speed
+		velocity = move_and_slide(velocity)
 
 
-func _on_Area2D_body_entered(body):
-	if "bullet" in body.name :
+func _on_Detector_body_entered(body):
+	if body.name == "player":
+		can_follow = true
+
+func _on_Detector_body_exited(body):
+	if body.name == "player":
+		can_follow = false
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == "Kill":
 		queue_free()

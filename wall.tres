@@ -3,22 +3,23 @@
 [ext_resource path="res://pics/bullet.jpg" type="Texture" id=1]
 
 [sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -540, -540, 540, -540, 540, 540, -540, 540 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 546, 550.5 )
+extents = Vector2( 540, 540 )
 
 [resource]
 0/name = "Sprite"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 0.0588235, 0.0431373, 0.0431373, 1 )
+0/modulate = Color( 0, 0, 0, 1 )
 0/region = Rect2( 0, 0, 1080, 1080 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 540, 540 )
 0/occluder = SubResource( 1 )
 0/navigation_offset = Vector2( 540, 540 )
-0/shape_offset = Vector2( 541, 533.5 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 541, 533.5 )
+0/shape_offset = Vector2( 540, 540 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 540, 540 )
 0/shape = SubResource( 2 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
@@ -27,6 +28,6 @@ extents = Vector2( 546, 550.5 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 541, 533.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 540, 540 )
 } ]
 0/z_index = 0
